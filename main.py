@@ -11,6 +11,16 @@ import os
 
 app = FastAPI()
 
+# for huggingface code
+@app.get("/")
+def read_root():
+    try:
+        return {"message": " K리그 승패 예측 서버가 정상 작동 중입니다! API 문서: /docs"}
+    except Exception as e:
+        print(f"Error: {e}")
+    raise HTTPException(status_code=500, detail=f"서버 에러: {str(e)}")
+
+
 # ----------------------------------------------------------------
 # 1. CORS 설정
 # ----------------------------------------------------------------
