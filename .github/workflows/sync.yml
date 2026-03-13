@@ -1,0 +1,28 @@
+name: Sync to Hugging Face Space
+
+## 허깅페이스에 파일 업로드 간단히 하기
+
+# main 브랜치에 코드가 push 될 때마다 이 작업이 자동으로 실행됩니다.
+on:
+  push:
+    branches: [main]
+
+jobs:
+  sync-to-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          lfs: true # AI 모델 가중치 파일(.h5, .pkl 등)을 정상적으로 옮기기 위해 LFS를 활성화합니다.
+
+      - name: Push to Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          
+          git remote add space https://kimhozzi:$HF_TOKEN@huggingface.co/spaces/kimhozzi/Kleague_hono
+          git push --force space main
+
+          
