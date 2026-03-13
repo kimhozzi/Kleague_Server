@@ -1,5 +1,5 @@
 # 파이썬 3.10 환경 (캡처본의 pycache 버전에 맞춤)
-FROM python:3.10
+FROM python:3.12
 
 # 작업 디렉토리 설정
 WORKDIR /code
