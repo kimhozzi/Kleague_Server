@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           lfs: true # AI 모델 가중치 파일(.h5, .pkl 등)을 정상적으로 옮기기 위해 LFS를 활성화합니다.
@@ -21,8 +21,5 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          
           git remote add space https://kimhozzi:$HF_TOKEN@huggingface.co/spaces/kimhozzi/Kleague_hono
           git push --force space main
-
-          
