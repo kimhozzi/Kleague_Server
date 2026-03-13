@@ -1,4 +1,16 @@
-py -3.10 -m pip install uv
+---
+title: Kleague Hono
+emoji: ⚽
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+---
+
+(여기에 원래 README에 있던 내용들이 이어지면 됩니다. 원래 내용이 없었다면 그냥 두셔도 됩니다.)
+
+
+<!-- py -3.10 -m pip install uv
 
 py -3.10 -m uv venv venv
 
@@ -17,4 +29,4 @@ app.py
 train.py 
 
 
-features - 모델별로 다르게 요구됨 
+features - 모델별로 다르게 요구됨  -->
